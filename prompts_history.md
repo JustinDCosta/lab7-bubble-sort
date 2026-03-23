@@ -8,3 +8,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 23-03-2026 11:32
 - **Prompt**: Create a local git repo for this project
 
+### 23-03-2026 11:51
+- **Prompt**: Can you explain to me how Bubble Sort works?
+
