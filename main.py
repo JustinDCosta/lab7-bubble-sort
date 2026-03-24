@@ -1,92 +1,175 @@
-"""Bubble Sort learning skeleton.
+"""Terminal Bubble Sort visualizer.
 
-Fill in each TODO in order. Run after each step to verify behavior.
+The app animates Bubble Sort in the terminal using numeric and bar views,
+supports speed selection, and supports comparison vs swap-only modes.
 """
+
+import time
+
+RESET = "\033[0m"
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+CYAN = "\033[96m"
+BAR_WIDTH = 30
 
 
 def get_numbers_from_user() -> list[int]:
-	"""Ask the user for comma-separated integers and return them as a list.
-
-	Example input: 5, 1, 4, 2, 8
-	"""
-	# TODO 1:
-	# 1) Read a line from input().
-	# 2) Split by comma.
-	# 3) Strip spaces from each piece.
-	# 4) Convert each piece to int.
-	# 5) Return the resulting list.
-	return [int(x.strip()) for x in input().split(',')]
+    """Ask the user for comma-separated integers and return them as a list."""
+    user_input = input("Enter numbers separated by commas (e.g., 8, 3, 5, 1, 4): ")
+    return [int(x.strip()) for x in user_input.split(",")]
 
 
-def should_swap(left: int, right: int) -> bool:
-	"""Return True when two neighbors are in the wrong ascending order."""
-	# TODO 2:
-	# Return True if left should come after right.
-	return left > right
+def get_speed_delay() -> float:
+    """Get playback speed and convert it to a delay value in seconds."""
+    speed = input("Choose speed [slow/normal/fast] (default: normal): ").strip().lower()
+    if speed == "slow":
+        return 0.65
+    if speed == "fast":
+        return 0.10
+    return 0.35
 
 
-def swap_neighbors(values: list[int], index: int) -> None:
-	"""Swap values[index] with values[index + 1] in-place."""
-	# TODO 3:
-	# Use tuple unpacking to swap these two items.
-	# Example: a, b = b, a
-	values[index], values[index + 1] = values[index + 1], values[index]
+def get_visual_mode() -> str:
+    """Get visualization mode from the user."""
+    mode = input("Choose mode [comparison/swap-only] (default: comparison): ").strip().lower()
+    if mode == "swap-only":
+        return "swap-only"
+    return "comparison"
 
 
-def bubble_pass(values: list[int], pass_index: int) -> bool:
-	"""Run one pass of Bubble Sort.
-
-	Returns True if at least one swap happened; otherwise False.
-	"""
-	swapped = False
-
-	# TODO 4:
-	# Complete one pass over the UNSORTED part only.
-	# Hint: last pass_index items are already in final position.
-	# For each j in the pass range:
-	# - if should_swap(values[j], values[j + 1]) is True:
-	#     - call swap_neighbors(values, j)
-	#     - set swapped = True
-
-	for j in range(len(values) - 1 - pass_index):
-		if should_swap(values[j], values[j + 1]):
-			swap_neighbors(values, j)
-			swapped = True
-
-	return swapped
+def clear_screen() -> None:
+    """Clear the terminal screen for animation frames without spawning a shell."""
+    # ANSI escape sequence: clear screen + move cursor to top-left.
+    print("\033[2J\033[H", end="")
 
 
-def bubble_sort(values: list[int]) -> list[int]:
-	"""Return a sorted copy of values using Bubble Sort (ascending)."""
-	result = values.copy()
+def scaled_bar_length(value: int, min_val: int, max_val: int, width: int = 30) -> int:
+    """Scale a value into a terminal bar length."""
+    if max_val == min_val:
+        return max(1, width // 2)
+    normalized = (value - min_val) / (max_val - min_val)
+    return max(1, int(normalized * width))
 
-	# TODO 5:
-	# Outer loop over pass_index from 0 to len(result) - 2.
-	# Call bubble_pass(result, pass_index) each time.
-	# If no swap happened in a pass, break early (already sorted).
-	for pass_index in range(len(result) - 1):
-		if not bubble_pass(result, pass_index):
-			break
 
-	return result
+def render_frame(
+    values: list[int],
+    left_idx: int,
+    right_idx: int,
+    pass_index: int,
+    compare_count: int,
+    swap_count: int,
+    did_swap: bool,
+) -> None:
+    """Render one visualization frame for the current comparison."""
+    if not values:
+        print(f"{CYAN}Bubble Sort Visualization (auto-play){RESET}")
+        print("No values to sort.")
+        return
+
+    min_val = min(values)
+    max_val = max(values)
+
+    print(f"{CYAN}Bubble Sort Visualization (auto-play){RESET}")
+    print(f"Pass: {pass_index} | Comparisons: {compare_count} | Swaps: {swap_count}\n")
+
+    numeric_cells = []
+    for i, v in enumerate(values):
+        if i == left_idx or i == right_idx:
+            color = GREEN if did_swap else YELLOW
+            numeric_cells.append(f"{color}[{v}]{RESET}")
+        else:
+            numeric_cells.append(f" {v} ")
+    print("Numbers:", " ".join(numeric_cells), "\n")
+
+    for i, v in enumerate(values):
+        bar_len = scaled_bar_length(v, min_val, max_val, width=BAR_WIDTH)
+        bar = "#" * bar_len
+        if i == left_idx or i == right_idx:
+            color = GREEN if did_swap else YELLOW
+            marker = "swap" if did_swap else "compare"
+            print(f"{i:>2}: {v:>4} |{color}{bar:<{BAR_WIDTH}}{RESET}| <-- {marker}")
+        else:
+            print(f"{i:>2}: {v:>4} |{bar:<{BAR_WIDTH}}|")
+
+
+def bubble_sort_visual(values: list[int], delay: float, mode: str) -> list[int]:
+    """Bubble Sort with terminal visualization and auto-play."""
+    if mode not in {"comparison", "swap-only"}:
+        mode = "comparison"
+
+    result = values.copy()
+    n = len(result)
+    compare_count = 0
+    swap_count = 0
+
+    for pass_index in range(n - 1):
+        swapped = False
+
+        for j in range(n - 1 - pass_index):
+            compare_count += 1
+            will_swap = result[j] > result[j + 1]
+
+            if mode == "comparison" or (mode == "swap-only" and will_swap):
+                clear_screen()
+                render_frame(
+                    result,
+                    j,
+                    j + 1,
+                    pass_index,
+                    compare_count,
+                    swap_count,
+                    did_swap=False,
+                )
+                time.sleep(delay)
+
+            if will_swap:
+                result[j], result[j + 1] = result[j + 1], result[j]
+                swapped = True
+                swap_count += 1
+
+                clear_screen()
+                render_frame(
+                    result,
+                    j,
+                    j + 1,
+                    pass_index,
+                    compare_count,
+                    swap_count,
+                    did_swap=True,
+                )
+                time.sleep(delay)
+
+        if not swapped:
+            break
+
+    clear_screen()
+    print(f"{GREEN}Final sorted result:{RESET}")
+    render_frame(
+        result,
+        -1,
+        -1,
+        pass_index=n - 1 if n > 0 else 0,
+        compare_count=compare_count,
+        swap_count=swap_count,
+        did_swap=False,
+    )
+    return result
 
 
 def print_results(original: list[int], sorted_values: list[int]) -> None:
-	"""Display before/after values for easy visual checking."""
-	print("Original:", original)
-	print("Sorted:  ", sorted_values)
+    """Display before/after values for easy visual checking."""
+    print("\nOriginal:", original)
+    print("Sorted:  ", sorted_values)
 
 
 def main() -> None:
-	"""Program entry point for the Bubble Sort learning app."""
-	# TODO 6:
-	# 1) Get numbers from the user.
-	# 2) Sort them with bubble_sort().
-	# 3) Print both original and sorted lists.
-	original = get_numbers_from_user()
-	sorted_values = bubble_sort(original)
-	print_results(original, sorted_values)
+    """Program entry point for the Bubble Sort learning app."""
+    original = get_numbers_from_user()
+    delay = get_speed_delay()
+    mode = get_visual_mode()
+    sorted_values = bubble_sort_visual(original, delay=delay, mode=mode)
+    print_results(original, sorted_values)
 
 
 if __name__ == "__main__":
-	main()
+    main()
