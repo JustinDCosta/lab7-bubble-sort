@@ -94,3 +94,8 @@
 - **Socratic Mode**: ON
 - **Changes Made**: Created `README.md` with project overview, features, setup instructions, run/test commands, and folder structure.
 - **Context and Reasons for Changes**: User requested project documentation; README was added to make onboarding, execution, and testing straightforward.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 24-03-2026 23:27
+- **Prompt**: I would like to visualize the sorting as it is happening. First, I would like to explore a terminal based approach. What do you suggest?
