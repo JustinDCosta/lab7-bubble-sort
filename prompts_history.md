@@ -23,3 +23,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 24-03-2026 23:20
 - **Prompt**: We can skip these questions as it will just take up time, as the questions you asked are simple but time-consuming to explain. Therefore, can you set up testing for this app, using basic pystest features and create atleast 5 tests?
 
+### 24-03-2026 23:21
+- **Prompt**: Can you create README.md for this project?
+

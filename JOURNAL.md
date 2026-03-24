@@ -59,6 +59,17 @@
 - **Context and Reasons for Changes**: The user requested a scaffolded app for practice, so the file now guides implementation step-by-step from input parsing to full sorting flow.
 
 ### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 24-03-2026 23:20
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: We can skip these questions as it will just take up time, as the questions you asked are simple but time-consuming to explain. Therefore, can you set up testing for this app, using basic pystest features and create atleast 5 tests?
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Created `test_main.py` with 18 comprehensive pytest tests covering all functions and edge cases (empty lists, single elements, sorted/reverse-sorted, duplicates, negative numbers, large lists, etc.). All tests passed.
+- **Context and Reasons for Changes**: User requested test setup to validate the bubble sort implementation. Tests were organized by class (TestShouldSwap, TestSwapNeighbors, TestBubblePass, TestBubbleSort) for clarity and maintainability.
+
+### **New Interaction**
 - **Hook Version**: 1.02
 - **Date**: 24-03-2026 23:11
 - **Prompt**: Since the there is only 6 todos and the code is simple for me to do, I have done it. Review it.
@@ -67,3 +78,8 @@
 - **Hook Version**: 1.02
 - **Date**: 24-03-2026 23:20
 - **Prompt**: We can skip these questions as it will just take up time, as the questions you asked are simple but time-consuming to explain. Therefore, can you set up testing for this app, using basic pystest features and create atleast 5 tests?
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 24-03-2026 23:21
+- **Prompt**: Can you create README.md for this project?
