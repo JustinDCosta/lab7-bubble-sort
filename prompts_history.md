@@ -62,3 +62,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 25-03-2026 00:28
 - **Prompt**: Keep the visualization window up until the user presses 'q' or 'esc' Slow things down a bit. Add a pause option that can be toggled with the Space Bar. Use Two different colors for the 2 values being swapped
 
+### 25-03-2026 00:31
+- **Prompt**: main.py is too big and looks messy. Can you refactor the project and enforce the separation of concerns between UI and Logic? Use several files if needed.
+

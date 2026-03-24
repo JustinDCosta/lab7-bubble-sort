@@ -242,3 +242,19 @@
 - **Hook Version**: 1.02
 - **Date**: 25-03-2026 00:28
 - **Prompt**: Keep the visualization window up until the user presses 'q' or 'esc' Slow things down a bit. Add a pause option that can be toggled with the Space Bar. Use Two different colors for the 2 values being swapped
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 25-03-2026 00:29
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: Keep the visualization window up until the user presses 'q' or 'esc' Slow things down a bit. Add a pause option that can be toggled with the Space Bar. Use Two different colors for the 2 values being swapped
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Updated `pygame_visualizer.py` to support quitting with `Q` in addition to `Esc`, slowed default playback speeds, and introduced distinct left/right swap colors for swapped values. Updated `README.md` controls section to document `Q` quit behavior. Re-ran syntax check and tests successfully.
+- **Context and Reasons for Changes**: User requested interaction and rendering refinements for the 2D visualizer to improve control and visual clarity during swap events.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 25-03-2026 00:31
+- **Prompt**: main.py is too big and looks messy. Can you refactor the project and enforce the separation of concerns between UI and Logic? Use several files if needed.
