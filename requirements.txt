@@ -1,0 +1,5 @@
+# Runtime dependency for 2D graphics visualizer (imported as pygame)
+pygame-ce>=2.5.7
+
+# Test dependency
+pytest>=9.0.0

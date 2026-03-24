@@ -12,6 +12,11 @@ A Python terminal app that visualizes Bubble Sort as it runs, with selectable pl
 
 - Console app that accepts comma-separated integers.
 - Animated terminal visualization (auto-play).
+- Refactored architecture with separation of concerns:
+  - core sorting logic in `sorting_logic.py`
+  - user input parsing/prompts in `cli_inputs.py`
+  - terminal UI rendering in `terminal_visualizer.py`
+  - pygame UI rendering in `pygame_visualizer.py`
 - Two visualization modes:
   - comparison: render every comparison
   - swap-only: render only comparison steps that swap
@@ -25,7 +30,7 @@ A Python terminal app that visualizes Bubble Sort as it runs, with selectable pl
 ## Requirements
 
 - Python 3.10+
-- pytest
+- Dependencies listed in `requirements.txt`
 
 ## Setup
 
@@ -36,11 +41,16 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-2. Install test dependency:
+2. Install project dependencies:
 
 ```powershell
-pip install pytest
+pip install -r requirements.txt
 ```
+
+Note:
+
+- The graphics dependency uses `pygame-ce`, which is imported in code as `pygame`.
+- This provides reliable compatibility with newer Python versions (including Python 3.14).
 
 ## Run the App
 
@@ -68,6 +78,24 @@ Original: [5, 1, 4, 2, 8]
 Sorted:   [1, 2, 4, 5, 8]
 ```
 
+## Run the Pygame Visualizer
+
+```powershell
+python pygame_visualizer.py
+```
+
+This starts a windowed 2D Bubble Sort animation with bars and highlighted comparisons/swaps.
+
+Controls:
+
+- `Space`: pause/resume
+- `Right Arrow`: single-step forward (when paused)
+- `Left Arrow`: single-step backward (when paused)
+- `Up Arrow`: faster playback
+- `Down Arrow`: slower playback
+- `R`: restart
+- `Q` or `Esc`: quit
+
 ## Run Tests
 
 Run all tests:
@@ -86,8 +114,13 @@ python -m pytest test_main.py -v
 
 ```text
 .
-|- main.py         # terminal visualizer and sorting logic
-|- test_main.py    # pytest test suite
+|- main.py                 # thin terminal entrypoint
+|- sorting_logic.py        # pure bubble sort/frame generation logic
+|- cli_inputs.py           # shared input parsing and prompt helpers
+|- terminal_visualizer.py  # terminal-only rendering/UI
+|- pygame_visualizer.py    # pygame-only rendering/UI
+|- test_main.py            # entrypoint smoke tests
+|- test_sorting_logic.py   # core/input/terminal unit tests
 |- README.md       # project documentation
 |- JOURNAL.md      # interaction/change log
 ```
