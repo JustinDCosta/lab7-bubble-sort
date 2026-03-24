@@ -83,3 +83,14 @@
 - **Hook Version**: 1.02
 - **Date**: 24-03-2026 23:21
 - **Prompt**: Can you create README.md for this project?
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 24-03-2026 23:21
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: Can you create README.md for this project?
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Created `README.md` with project overview, features, setup instructions, run/test commands, and folder structure.
+- **Context and Reasons for Changes**: User requested project documentation; README was added to make onboarding, execution, and testing straightforward.
