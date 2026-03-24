@@ -109,3 +109,8 @@
 - **Hook Version**: 1.02
 - **Date**: 24-03-2026 23:45
 - **Prompt**: yes, lets do that
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 24-03-2026 23:56
+- **Prompt**: This is good. But can you give me the stubs so that i can do these myself. And about the test, we can do this later after i do the code.
