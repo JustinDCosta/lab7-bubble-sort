@@ -114,3 +114,19 @@
 - **Hook Version**: 1.02
 - **Date**: 24-03-2026 23:56
 - **Prompt**: This is good. But can you give me the stubs so that i can do these myself. And about the test, we can do this later after i do the code.
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 24-03-2026 23:56
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: This is good. But can you give me the stubs so that i can do these myself. And about the test, we can do this later after i do the code.
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Converted `main.py` into a visualization-learning scaffold with TODO stubs for speed selection, mode selection, bar scaling, frame rendering, and visual sorting flow.
+- **Context and Reasons for Changes**: User requested stubs to implement personally and asked to postpone test updates; implementation details were intentionally left as `NotImplementedError` placeholders.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 25-03-2026 00:04
+- **Prompt**: did all the stubs. review them and then get on with the tests.

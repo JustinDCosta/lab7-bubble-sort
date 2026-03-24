@@ -38,3 +38,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 24-03-2026 23:56
 - **Prompt**: This is good. But can you give me the stubs so that i can do these myself. And about the test, we can do this later after i do the code.
 
+### 25-03-2026 00:04
+- **Prompt**: did all the stubs. review them and then get on with the tests.
+
