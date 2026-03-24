@@ -17,3 +17,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 24-03-2026 12:54
 - **Prompt**: I understand it now. Can you help me learn by writing a skeleton bubble sort app with stubs functions, with comments and TODOs that will indicate what I need to do?
 
+### 24-03-2026 23:11
+- **Prompt**: Since the there is only 6 todos and the code is simple for me to do, I have done it. Review it.
+

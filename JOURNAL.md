@@ -46,3 +46,19 @@
 - **Hook Version**: 1.02
 - **Date**: 24-03-2026 12:54
 - **Prompt**: I understand it now. Can you help me learn by writing a skeleton bubble sort app with stubs functions, with comments and TODOs that will indicate what I need to do?
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 24-03-2026 12:55
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: I understand it now. Can you help me learn by writing a skeleton bubble sort app with stubs functions, with comments and TODOs that will indicate what I need to do?
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Added a complete Bubble Sort learning skeleton in `main.py` with stub functions, comments, and ordered TODOs.
+- **Context and Reasons for Changes**: The user requested a scaffolded app for practice, so the file now guides implementation step-by-step from input parsing to full sorting flow.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 24-03-2026 23:11
+- **Prompt**: Since the there is only 6 todos and the code is simple for me to do, I have done it. Review it.
