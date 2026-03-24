@@ -41,3 +41,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 25-03-2026 00:04
 - **Prompt**: did all the stubs. review them and then get on with the tests.
 
+### 25-03-2026 00:07
+- **Prompt**: Can you clean up the code and update the documentations?
+

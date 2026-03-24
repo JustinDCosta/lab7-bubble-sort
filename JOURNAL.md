@@ -130,3 +130,19 @@
 - **Hook Version**: 1.02
 - **Date**: 25-03-2026 00:04
 - **Prompt**: did all the stubs. review them and then get on with the tests.
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 25-03-2026 00:04
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: did all the stubs. review them and then get on with the tests.
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Reviewed `main.py` implementation, replaced outdated tests with a new visualization-focused pytest suite in `test_main.py`, and executed tests successfully (12 passed).
+- **Context and Reasons for Changes**: The existing tests targeted removed functions from an earlier architecture, so tests were updated to match current input helpers, scaling logic, and visual sorting behavior while mocking terminal side effects.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 25-03-2026 00:07
+- **Prompt**: Can you clean up the code and update the documentations?
