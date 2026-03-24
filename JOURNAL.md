@@ -210,3 +210,19 @@
 - **Hook Version**: 1.02
 - **Date**: 25-03-2026 00:21
 - **Prompt**: Can you implement a Pygame based visualization?
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 25-03-2026 00:23
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: Can you implement a Pygame based visualization?
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Implemented a full Pygame visualizer in `pygame_visualizer.py` with frame-based Bubble Sort animation, comparison/swap-only modes, speed controls, pause/step/restart keyboard controls, and robust input parsing. Updated `README.md` with dependency and run instructions for the new visualizer.
+- **Context and Reasons for Changes**: User requested a real 2D graphics implementation; a standalone Pygame renderer was added to avoid disrupting the existing terminal version while enabling richer visualization.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 25-03-2026 00:23
+- **Prompt**: Can you install PyGame in the local virtual environment and then create a 'requirements.txt' that includes the required libraries to run this project, and finally update README to explain all of this?

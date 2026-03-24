@@ -56,3 +56,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 25-03-2026 00:21
 - **Prompt**: Can you implement a Pygame based visualization?
 
+### 25-03-2026 00:23
+- **Prompt**: Can you install PyGame in the local virtual environment and then create a 'requirements.txt' that includes the required libraries to run this project, and finally update README to explain all of this?
+
