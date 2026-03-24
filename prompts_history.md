@@ -47,3 +47,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 25-03-2026 00:14
 - **Prompt**: I will be pushing this to github. So before that i want you to do a full check on  everything and make sure it is secure.
 
+### 25-03-2026 00:18
+- **Prompt**: the png image is required for me to push to git. This wont be a security issue.
+
