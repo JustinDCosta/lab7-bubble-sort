@@ -62,3 +62,8 @@
 - **Hook Version**: 1.02
 - **Date**: 24-03-2026 23:11
 - **Prompt**: Since the there is only 6 todos and the code is simple for me to do, I have done it. Review it.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 24-03-2026 23:20
+- **Prompt**: We can skip these questions as it will just take up time, as the questions you asked are simple but time-consuming to explain. Therefore, can you set up testing for this app, using basic pystest features and create atleast 5 tests?
