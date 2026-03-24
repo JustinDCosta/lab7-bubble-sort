@@ -44,3 +44,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 25-03-2026 00:07
 - **Prompt**: Can you clean up the code and update the documentations?
 
+### 25-03-2026 00:14
+- **Prompt**: I will be pushing this to github. So before that i want you to do a full check on  everything and make sure it is secure.
+

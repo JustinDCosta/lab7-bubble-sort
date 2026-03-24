@@ -146,3 +146,19 @@
 - **Hook Version**: 1.02
 - **Date**: 25-03-2026 00:07
 - **Prompt**: Can you clean up the code and update the documentations?
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 25-03-2026 00:07
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: Can you clean up the code and update the documentations?
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Cleaned `main.py` by removing leftover TODO scaffolding, improving module/function documentation, normalizing formatting, introducing a shared bar width constant, and adding defensive mode fallback. Updated `README.md` to reflect the terminal visualization architecture, speed/mode prompts, and current test scope. Installed `pytest` in the active virtual environment and verified test suite passes.
+- **Context and Reasons for Changes**: User requested general code/documentation cleanup; updates focused on readability, maintainability, and accurate project docs aligned with current behavior.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 25-03-2026 00:14
+- **Prompt**: I will be pushing this to github. So before that i want you to do a full check on  everything and make sure it is secure.
