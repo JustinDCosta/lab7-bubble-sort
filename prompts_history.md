@@ -59,3 +59,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 25-03-2026 00:23
 - **Prompt**: Can you install PyGame in the local virtual environment and then create a 'requirements.txt' that includes the required libraries to run this project, and finally update README to explain all of this?
 
+### 25-03-2026 00:28
+- **Prompt**: Keep the visualization window up until the user presses 'q' or 'esc' Slow things down a bit. Add a pause option that can be toggled with the Space Bar. Use Two different colors for the 2 values being swapped
+

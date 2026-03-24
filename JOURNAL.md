@@ -226,3 +226,19 @@
 - **Hook Version**: 1.02
 - **Date**: 25-03-2026 00:23
 - **Prompt**: Can you install PyGame in the local virtual environment and then create a 'requirements.txt' that includes the required libraries to run this project, and finally update README to explain all of this?
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 25-03-2026 00:25
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: Can you install PyGame in the local virtual environment and then create a 'requirements.txt' that includes the required libraries to run this project, and finally update README to explain all of this?
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Attempted to install `pygame` in local venv, then installed `pygame-ce` (pygame-compatible) due Python 3.14 wheel/build constraints. Added `requirements.txt` with `pygame-ce` and `pytest`. Updated `README.md` setup instructions to install dependencies via requirements file and documented the `pygame-ce` compatibility note. Re-ran tests successfully (12 passed).
+- **Context and Reasons for Changes**: User requested local graphics dependency installation and dependency documentation before push; adjustments ensured reliable installation on current interpreter while preserving `import pygame` behavior.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 25-03-2026 00:28
+- **Prompt**: Keep the visualization window up until the user presses 'q' or 'esc' Slow things down a bit. Add a pause option that can be toggled with the Space Bar. Use Two different colors for the 2 values being swapped
