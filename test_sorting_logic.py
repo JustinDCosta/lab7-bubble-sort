@@ -16,6 +16,26 @@ class TestInputHelpers:
         except ValueError:
             assert True
 
+    def test_parse_random_count_shortcut_valid(self):
+        assert cli_inputs.parse_random_count_shortcut("n=25") == 25
+
+    def test_parse_random_count_shortcut_non_match(self):
+        assert cli_inputs.parse_random_count_shortcut("1,2,3") is None
+
+    def test_parse_random_count_shortcut_invalid_empty(self):
+        try:
+            cli_inputs.parse_random_count_shortcut("n=")
+            assert False
+        except ValueError:
+            assert True
+
+    def test_parse_random_count_shortcut_invalid_zero(self):
+        try:
+            cli_inputs.parse_random_count_shortcut("n=0")
+            assert False
+        except ValueError:
+            assert True
+
     def test_terminal_speed_default(self, monkeypatch):
         monkeypatch.setattr("builtins.input", lambda _: "unknown")
         assert cli_inputs.get_terminal_speed_delay() == 0.55
@@ -23,6 +43,26 @@ class TestInputHelpers:
     def test_visual_mode_default(self, monkeypatch):
         monkeypatch.setattr("builtins.input", lambda _: "nope")
         assert cli_inputs.get_visual_mode() == "comparison"
+
+    def test_random_default_on_empty_input(self, monkeypatch):
+        monkeypatch.setattr("builtins.input", lambda _: "")
+        monkeypatch.setattr(cli_inputs.random, "randint", lambda a, b: 7)
+        values = cli_inputs.get_numbers_from_user()
+        assert len(values) == cli_inputs.DEFAULT_RANDOM_COUNT
+        assert all(value == 7 for value in values)
+
+    def test_random_shortcut_n_count(self, monkeypatch):
+        monkeypatch.setattr("builtins.input", lambda _: "n=5")
+        monkeypatch.setattr(cli_inputs.random, "randint", lambda a, b: 9)
+        values = cli_inputs.get_numbers_from_user()
+        assert len(values) == 5
+        assert all(value == 9 for value in values)
+
+    def test_min_count_reprompt_then_success(self, monkeypatch):
+        answers = iter(["1", "1,2"]) 
+        monkeypatch.setattr("builtins.input", lambda _: next(answers))
+        values = cli_inputs.get_numbers_from_user(min_count=2)
+        assert values == [1, 2]
 
 
 class TestSortingLogic:

@@ -306,3 +306,14 @@
 - **Hook Version**: 1.02
 - **Date**: 26-03-2026 18:23
 - **Prompt**: About the n = <count> was not included in the prompt for the user while running the application.
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 26-03-2026 18:25
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: About the n = <count> was not included in the prompt for the user while running the application.
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Updated `cli_inputs.py` prompt text to explicitly show the `n=<count>` shortcut in the runtime input message. Re-ran full test suite successfully (18 passed).
+- **Context and Reasons for Changes**: User reported discoverability issue for random-size shortcut; update improves UX by making the feature visible at the exact input prompt.

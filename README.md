@@ -52,17 +52,24 @@ Note:
 - The graphics dependency uses `pygame-ce`, which is imported in code as `pygame`.
 - This provides reliable compatibility with newer Python versions (including Python 3.14).
 
-## Run the App
+## Run the Terminal Visualizer (main.py)
 
 ```powershell
 python main.py
 ```
+
+`main.py` is the terminal visualizer entrypoint.
 
 Example input:
 
 ```text
 5, 1, 4, 2, 8
 ```
+
+Quick start option:
+
+- Press `Enter` at the numbers prompt to auto-generate a random demo list.
+- Type `n=<count>` (for example `n=25`) to auto-generate a random list of that size.
 
 You will then be asked for:
 
@@ -85,6 +92,13 @@ python pygame_visualizer.py
 ```
 
 This starts a windowed 2D Bubble Sort animation with bars and highlighted comparisons/swaps.
+
+`pygame_visualizer.py` is separate from `main.py` and launches the graphics window.
+
+Quick start option:
+
+- Press `Enter` at the numbers prompt to auto-generate a random demo list.
+- Type `n=<count>` (for example `n=25`) to auto-generate a random list of that size.
 
 Controls:
 
@@ -129,5 +143,6 @@ python -m pytest test_main.py -v
 
 - bubble_sort_visual returns a sorted copy and keeps the original input list unchanged.
 - Input parsing expects integers separated by commas.
-- Invalid input (non-integer tokens) will raise a `ValueError`.
+- You can generate random input with `Enter` (default size) or `n=<count>`.
+- Invalid input is handled with a retry prompt.
 - ANSI colors are used for highlights and may render differently depending on terminal support.
