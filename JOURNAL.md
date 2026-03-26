@@ -290,3 +290,19 @@
 - **Hook Version**: 1.02
 - **Date**: 26-03-2026 18:12
 - **Prompt**: Sure. do the type n="" for a random list of values
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 26-03-2026 18:13
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: Sure. do the type n="" for a random list of values
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Added `n=<count>` random-list shortcut support in `cli_inputs.py` with validation and generation helpers, while preserving Enter-for-default-random behavior. Updated `README.md` with examples of the new shortcut for both terminal and pygame flows. Expanded `test_sorting_logic.py` with tests for valid/invalid `n=` parsing and random generation behavior.
+- **Context and Reasons for Changes**: User requested a quicker UX path for random input size selection; shortcut enables fast demo setup without manual list typing.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 26-03-2026 18:23
+- **Prompt**: About the n = <count> was not included in the prompt for the user while running the application.

@@ -71,3 +71,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 26-03-2026 18:12
 - **Prompt**: Sure. do the type n="" for a random list of values
 
+### 26-03-2026 18:23
+- **Prompt**: About the n = <count> was not included in the prompt for the user while running the application.
+
