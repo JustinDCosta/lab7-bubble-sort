@@ -274,3 +274,19 @@
 - **Hook Version**: 1.02
 - **Date**: 26-03-2026 18:10
 - **Prompt**: The readme does not explain how to run the pygame visu. I had to look up at the code to figure out how to do it. The main.py maps directly to the terminal visu. Fix this and update Readme correctly with correct instructions and requirements. Also, a default random list of numbers would have been nice - start thinking about the User Experience - make things easy for the user.
+
+### **New Interaction**
+- **Agent Version**: 2.2
+- **Date**: 26-03-2026 18:11
+- **User**: justin.d-costa@epita.fr
+- **Prompt**: The readme does not explain how to run the pygame visu. I had to look up at the code to figure out how to do it. The main.py maps directly to the terminal visu. Fix this and update Readme correctly with correct instructions and requirements. Also, a default random list of numbers would have been nice - start thinking about the User Experience - make things easy for the user.
+- **CoPilot Mode**: Agent
+- **CoPilot Model**: GPT-5.3-Codex
+- **Socratic Mode**: ON
+- **Changes Made**: Updated `README.md` with explicit run instructions distinguishing `main.py` (terminal UI) and `pygame_visualizer.py` (windowed UI), plus quick-start notes. Improved UX in `cli_inputs.py` by allowing empty input to auto-generate a default random list and by printing the generated values. Added tests in `test_sorting_logic.py` for random-default and reprompt behavior.
+- **Context and Reasons for Changes**: User reported unclear run instructions and requested easier first-run experience; changes prioritized discoverability and low-friction usage.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 26-03-2026 18:12
+- **Prompt**: Sure. do the type n="" for a random list of values

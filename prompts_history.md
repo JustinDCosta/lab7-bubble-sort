@@ -68,3 +68,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 26-03-2026 18:10
 - **Prompt**: The readme does not explain how to run the pygame visu. I had to look up at the code to figure out how to do it. The main.py maps directly to the terminal visu. Fix this and update Readme correctly with correct instructions and requirements. Also, a default random list of numbers would have been nice - start thinking about the User Experience - make things easy for the user.
 
+### 26-03-2026 18:12
+- **Prompt**: Sure. do the type n="" for a random list of values
+
