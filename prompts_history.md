@@ -65,3 +65,6 @@ Automatically captured prompt log. Entries are appended in chronological order (
 ### 25-03-2026 00:31
 - **Prompt**: main.py is too big and looks messy. Can you refactor the project and enforce the separation of concerns between UI and Logic? Use several files if needed.
 
+### 26-03-2026 18:10
+- **Prompt**: The readme does not explain how to run the pygame visu. I had to look up at the code to figure out how to do it. The main.py maps directly to the terminal visu. Fix this and update Readme correctly with correct instructions and requirements. Also, a default random list of numbers would have been nice - start thinking about the User Experience - make things easy for the user.
+

@@ -269,3 +269,8 @@
 - **Socratic Mode**: ON
 - **Changes Made**: Refactored project into separate modules: `sorting_logic.py` (pure bubble-sort/frame logic), `cli_inputs.py` (input parsing and prompt helpers), `terminal_visualizer.py` (terminal rendering/UI), and slimmed `main.py` to a thin entrypoint. Updated `pygame_visualizer.py` to consume shared logic/input modules. Reworked tests into `test_sorting_logic.py` plus `test_main.py` smoke checks and updated `README.md` structure documentation.
 - **Context and Reasons for Changes**: User requested cleaner architecture with clear separation of concerns between logic and UI; refactor removed duplication and made logic reusable across terminal and pygame frontends.
+
+### **New Interaction**
+- **Hook Version**: 1.02
+- **Date**: 26-03-2026 18:10
+- **Prompt**: The readme does not explain how to run the pygame visu. I had to look up at the code to figure out how to do it. The main.py maps directly to the terminal visu. Fix this and update Readme correctly with correct instructions and requirements. Also, a default random list of numbers would have been nice - start thinking about the User Experience - make things easy for the user.
